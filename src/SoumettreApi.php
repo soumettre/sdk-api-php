@@ -14,9 +14,9 @@ class SoumettreApi extends SoumettreApiClient implements SoumettreServices
         'delete',
     );
 
-    public function __construct($mode = 'prod')
+    public function __construct($mode = 'prod', $api_email = SOUMETTRE_API_EMAIL, $api_key = SOUMETTRE_API_KEY, $api_secret = SOUMETTRE_API_SECRET)
     {
-        parent::__construct(SOUMETTRE_API_EMAIL, SOUMETTRE_API_KEY, SOUMETTRE_API_SECRET);
+        parent::__construct($api_email, $api_key, $api_secret);
 
         $this->mode = $mode;
         $this->check_request();

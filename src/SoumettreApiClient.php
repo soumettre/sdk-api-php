@@ -29,13 +29,20 @@ class SoumettreApiClient
      *
      * @param string $prefix Préfixe SQL pour les options
      */
-    public function wp_load_credentials($prefix = 'soum_sour_')
+    public function wp_set_credentials($prefix = 'soum_sour_')
     {
         $this->email = get_option($prefix . 'email');
         $this->api_key = get_option($prefix . 'api_key');
         $this->api_secret = get_option($prefix . 'api_secret');
     }
 
+    /**
+     * Change le endpoint de l'API
+     * @param string $url URL where to find API
+     */
+    public function set_endpoint($url) {
+        $this->endpoint = $url;
+    }
     /**
      * Teste la connexion à l'API via une requête signée
      */
