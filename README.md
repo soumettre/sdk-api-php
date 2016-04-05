@@ -2,6 +2,7 @@
 
 ## Installation ##
 Via Git : git clone git@github.com:soumettre/sdk-api-php.git soumettre-api
+
 Via composer/packagist : composer require soumettre/sdk-api-php
 
 ## Getting started ##
