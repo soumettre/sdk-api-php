@@ -1,0 +1,15 @@
+{
+    "name": "soumettre/sdk-api-php",
+    "description": "Use Soumettre.fr API from your Site",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Didier Sampaolo",
+            "email": "didier@didcode.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Soumettre\\": "src/"}
+    }
+}
