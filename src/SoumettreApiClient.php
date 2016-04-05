@@ -123,7 +123,7 @@ class SoumettreApiClient
      * @return bool
      * @throws \Exception Signature invalide
      */
-    protected function check_signature($endpoint, $params)
+    public function check_signature($endpoint, $params)
     {
 
         $signature = $params['sign'];
