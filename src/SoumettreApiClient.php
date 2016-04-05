@@ -71,7 +71,7 @@ class SoumettreApiClient
      * @param array $params
      * @return object Réponse en JSON
      */
-    protected function request($service, $post_params = array())
+    public function request($service, $post_params = array())
     {
         $endpoint = $this->endpoint . $service;
         $post_params = $this->sign($service, $post_params);
