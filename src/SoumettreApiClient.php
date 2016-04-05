@@ -2,10 +2,7 @@
 
 class SoumettreApiClient
 {
-
-//    private $endpoint = 'http://10.0.2.15:8001/api/';
-    private $endpoint = 'https://soumettre.fr/api/';
-
+    protected $endpoint = 'https://soumettre.fr/api/';
     protected $email;
     protected $api_key;
     protected $api_secret;
@@ -40,9 +37,11 @@ class SoumettreApiClient
      * Change le endpoint de l'API
      * @param string $url URL where to find API
      */
-    public function set_endpoint($url) {
+    public function set_endpoint($url)
+    {
         $this->endpoint = $url;
     }
+
     /**
      * Teste la connexion à l'API via une requête signée
      */
@@ -108,12 +107,12 @@ class SoumettreApiClient
             serialize($post_params)
         ));
 
-        $params['user'] = $this->email;
-        $params['key'] = $this->api_key;
-        $params['time'] = $time;
-        $params['sign'] = $signature;
+        $post_params['user'] = $this->email;
+        $post_params['key'] = $this->api_key;
+        $post_params['time'] = $time;
+        $post_params['sign'] = $signature;
 
-        return $params;
+        return $post_params;
     }
 
     /**
@@ -124,7 +123,8 @@ class SoumettreApiClient
      * @return bool
      * @throws \Exception Signature invalide
      */
-    protected function check_signature($endpoint, $params) {
+    protected function check_signature($endpoint, $params)
+    {
 
         $signature = $params['sign'];
         $time = $params['time'];
@@ -149,7 +149,8 @@ class SoumettreApiClient
         return true;
     }
 
-    protected function response($array) {
+    protected function response($array)
+    {
         echo json_encode($array);
         die();
     }
