@@ -108,7 +108,7 @@ class SoumettreApiClient
         ));
 
         $post_params['user'] = $this->email;
-        $post_params['key'] = $this->api_key;
+        $post_params['api_key'] = $this->api_key;
         $post_params['time'] = $time;
         $post_params['sign'] = $signature;
 
@@ -130,7 +130,7 @@ class SoumettreApiClient
         $time = $params['time'];
 
         unset($params['user']);
-        unset($params['key']);
+        unset($params['api_key']);
         unset($params['time']);
         unset($params['sign']);
 
