@@ -16,10 +16,10 @@ class SoumettreApi extends SoumettreApiClient implements SoumettreServices
 
     public function __construct($mode = 'prod')
     {
+        parent::__construct(SOUMETTRE_API_EMAIL, SOUMETTRE_API_KEY, SOUMETTRE_API_SECRET);
+
         $this->mode = $mode;
         $this->check_request();
-
-        parent::__construct(SOUMETTRE_API_EMAIL, SOUMETTRE_API_KEY, SOUMETTRE_API_SECRET);
     }
 
     protected function check_request()
