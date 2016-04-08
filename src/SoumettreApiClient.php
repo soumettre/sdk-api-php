@@ -22,18 +22,6 @@ class SoumettreApiClient
     }
 
     /**
-     * Charge les credentials depuis la base de données (utilisé par Wordpress)
-     *
-     * @param string $prefix Préfixe SQL pour les options
-     */
-    public function wp_set_credentials($prefix = 'soum_sour_')
-    {
-        $this->email = get_option($prefix . 'email');
-        $this->api_key = get_option($prefix . 'api_key');
-        $this->api_secret = get_option($prefix . 'api_secret');
-    }
-
-    /**
      * Change le endpoint de l'API
      * @param string $url URL where to find API
      */
@@ -85,7 +73,7 @@ class SoumettreApiClient
         $output = curl_exec($ch);
         curl_close($ch);
 
-        return json_decode($output);
+        return $output;
     }
 
     /**
@@ -133,6 +121,7 @@ class SoumettreApiClient
         unset($params['api_key']);
         unset($params['time']);
         unset($params['sign']);
+        unset($params['method']);
 
         $check = md5(sprintf("%s-%s-%d-%s-%s",
             $this->api_key,
