@@ -3,8 +3,6 @@ require_once('config.php');
 
 require __DIR__ . '/vendor/autoload.php';
 
-$mode = "test";
-//$mode = "prod";
-
-$api = new Soumettre\SoumettreApi($mode);
+$api = new Soumettre\SoumettreApi('test');
+$api = new Soumettre\SoumettreApi();
 
