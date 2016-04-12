@@ -87,12 +87,11 @@ class SoumettreApiClient
     {
         $time = time();
 
-        $signature = md5(sprintf("%s-%s-%d-%s-%s",
+        $signature = md5(sprintf("%s-%s-%d-%s",
             $this->api_key,
             $this->api_secret,
             $time,
-            $endpoint,
-            serialize($post_params)
+            $endpoint
         ));
 
         $post_params['user'] = $this->email;
@@ -117,18 +116,11 @@ class SoumettreApiClient
         $signature = $params['sign'];
         $time = $params['time'];
 
-        unset($params['user']);
-        unset($params['api_key']);
-        unset($params['time']);
-        unset($params['sign']);
-        unset($params['method']);
-
-        $check = md5(sprintf("%s-%s-%d-%s-%s",
+        $check = md5(sprintf("%s-%s-%d-%s",
             $this->api_key,
             $this->api_secret,
             $time,
-            $endpoint,
-            serialize($params)
+            $endpoint
         ));
 
         if ($signature != $check) {
@@ -140,6 +132,7 @@ class SoumettreApiClient
 
     protected function response($array)
     {
+        header('Content-Type: application/json');
         echo json_encode($array);
         die();
     }
