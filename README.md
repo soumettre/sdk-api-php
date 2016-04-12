@@ -26,4 +26,4 @@ A l'heure actuelle, ces services sont au nombre de 4 :
 + __categories__ : Renvoie la liste de vos catégories et sous-catégories, ainsi que leurs liens de parenté
 + __post__ : Ajoute un post sur votre plate-forme
 + __delete__ : Efface un post de votre plate-forme
-
++ __check_version__ : Retourne la version du plugin utilisée (pour les plates-formes type Wordpress)
