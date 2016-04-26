@@ -69,7 +69,9 @@ class SoumettreApiClient
         curl_setopt($ch, CURLOPT_URL, $endpoint);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
+        curl_setopt($ch, CURLOPT_REFERER, 'https://soumettre.fr/');
+        curl_setopt($ch, CURLOPT_USERAGENT, 'SoumettreApi');
+        
         $output = curl_exec($ch);
         curl_close($ch);
 
