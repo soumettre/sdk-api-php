@@ -1,13 +1,13 @@
 {
     "name": "soumettre/sdk-api-php",
     "description": "Use Soumettre.fr API from your Site",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/soumettre/sdk-api-php",
     "license": "MIT",
     "authors": [
         {
             "name": "Didier Sampaolo",
-            "email": "didier@didcode.com"
+            "email": "didier@soumettre.fr"
         }
     ],
     "require": {
