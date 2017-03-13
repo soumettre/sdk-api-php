@@ -77,7 +77,7 @@ class SoumettreApiClient
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 
         $output = curl_exec($ch);
-	$this->infos = curl_getinfos($ch);
+	$this->infos = curl_getinfo($ch);
         curl_close($ch);
 
         return $output;
