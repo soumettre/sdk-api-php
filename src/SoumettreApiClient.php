@@ -6,6 +6,7 @@ class SoumettreApiClient
     protected $email;
     protected $api_key;
     protected $api_secret;
+    public $infos;
 
     /**
      * Si les paramètres ne sont pas fournis au constructeur, vous DEVEZ utiliser une fonction  *_load_credentials
@@ -76,6 +77,7 @@ class SoumettreApiClient
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 
         $output = curl_exec($ch);
+	$this->infos = curl_getinfos($ch);
         curl_close($ch);
 
         return $output;
